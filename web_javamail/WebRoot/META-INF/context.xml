@@ -1,0 +1,7 @@
+<Context>
+	<Resource name="mail/Session" auth="Container"
+            type="javax.mail.Session"
+            mail.smtp.host="smtp.sian.com"
+            mail.smtp.auth="true"
+            mail.transport.protocol="smtp"/>
+</Context>
