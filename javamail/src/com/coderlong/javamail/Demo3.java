@@ -9,7 +9,10 @@ import java.util.logging.FileHandler;
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
+import javax.mail.Address;
 import javax.mail.Session;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
@@ -24,7 +27,9 @@ public class Demo3 {
 		Session session = Session.getInstance(new Properties());
 		MimeMessage message = new MimeMessage(session);
 		message.setSubject("javamail");
-		
+		//这里显示的名称 是可以自己改动的 
+		message.setReplyTo(new Address[]{new InternetAddress("sailong@sina.coms")});
+		 
 		MimeMultipart mimeMultipart = new MimeMultipart("mixed");
 		message.setContent(mimeMultipart);
 		//正文 需要带上图片
